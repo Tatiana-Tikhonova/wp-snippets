@@ -1,7 +1,7 @@
 <?php
 // хук для регистрации
-add_action('init', 'prefix_register_taxonomy');
-function prefix_register_taxonomy()
+add_action('init', 'tati_register_taxonomy');
+function tati_register_taxonomy()
 {
 
     register_taxonomy('genre', ['post', 'book'], [

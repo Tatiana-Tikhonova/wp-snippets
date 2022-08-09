@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Class Taty_Walker_Nav_Menu extends Walker_Nav_Menu
+ * Class Tati_Walker_Nav_Menu extends Walker_Nav_Menu
  * для использования подключить в functions.php
- * require get_template_directory() . '/inc/class-taty-wp-walker.php';
+ * require get_template_directory() . '/inc/class-tati-wp-walker.php';
  * в header при вызове wp_nav_menu 
- * в аргументы добавить 'walker' => new Taty_Walker_Nav_Menu(),
+ * в аргументы добавить 'walker' => new Tati_Walker_Nav_Menu(),
  */
-class Taty_Walker_Nav_Menu extends Walker_Nav_Menu
+class Tati_Walker_Nav_Menu extends Walker_Nav_Menu
 {
     public function start_lvl(&$output, $depth = 0, $args = null)
     {

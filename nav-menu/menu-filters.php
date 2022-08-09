@@ -1,15 +1,9 @@
 <?php
 
 /**
- * Function for `nav_menu_submenu_css_class` filter-hook.
- * 
- * @param string[] $classes Array of the CSS classes that are applied to the menu `<ul>` element.
- * @param stdClass $args    An object of `wp_nav_menu()` arguments.
- * @param int      $depth   Depth of menu item. Used for padding.
- *
- * @return string[]
+ * добавляем классы к суб-меню
  */
-function taty_submenu_css_class_filter($classes, $args, $depth)
+function tati_submenu_css_class_filter($classes, $args, $depth)
 {
 
     if ('menu-1' == $args->theme_location) {
@@ -20,19 +14,12 @@ function taty_submenu_css_class_filter($classes, $args, $depth)
 
     return $classes;
 }
-add_filter('nav_menu_submenu_css_class', 'taty_submenu_css_class_filter', 10, 3);
+add_filter('nav_menu_submenu_css_class', 'tati_submenu_css_class_filter', 10, 3);
 
 /**
- * Function for `nav_menu_css_class` filter-hook.
- * 
- * @param string[] $classes   Array of the CSS classes that are applied to the menu item's `<li>` element.
- * @param WP_Post  $menu_item The current menu item object.
- * @param stdClass $args      An object of wp_nav_menu() arguments.
- * @param int      $depth     Depth of menu item. Used for padding.
- *
- * @return string[]
+ * добавляем классы к пунктам меню
  */
-function taty_menu_css_class_filter($classes, $menu_item, $args, $depth)
+function tati_menu_css_class_filter($classes, $menu_item, $args, $depth)
 {
 
     if ('menu-1' == $args->theme_location) {
@@ -46,19 +33,12 @@ function taty_menu_css_class_filter($classes, $menu_item, $args, $depth)
 
     return $classes;
 }
-add_filter('nav_menu_css_class', 'taty_menu_css_class_filter', 10, 4);
+add_filter('nav_menu_css_class', 'tati_menu_css_class_filter', 10, 4);
 
 /**
- * Function for `nav_menu_link_attributes` filter-hook.
- * 
- * @param array    $atts      The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored.
- * @param WP_Post  $menu_item The current menu item object.
- * @param stdClass $args      An object of wp_nav_menu() arguments.
- * @param int      $depth     Depth of menu item. Used for padding.
- *
- * @return array
+ * добавляем классы к ссылкам меню
  */
-function taty_menu_link_attributes_filter($atts, $menu_item, $args, $depth)
+function tati_menu_link_attributes_filter($atts, $menu_item, $args, $depth)
 
 {
 
@@ -72,20 +52,13 @@ function taty_menu_link_attributes_filter($atts, $menu_item, $args, $depth)
 
     return $atts;
 }
-add_filter('nav_menu_link_attributes', 'taty_menu_link_attributes_filter', 10, 4);
+add_filter('nav_menu_link_attributes', 'tati_menu_link_attributes_filter', 10, 4);
 
 
 /**
- * Function for `walker_nav_menu_start_el` filter-hook.
- * 
- * @param string   $item_output The menu item's starting HTML output.
- * @param WP_Post  $menu_item   Menu item data object.
- * @param int      $depth       Depth of menu item. Used for padding.
- * @param stdClass $args        An object of wp_nav_menu() arguments.
- *
- * @return string
+ * добавляем маркер к родительским пунктам меню
  */
-function taty_filter_walker_nav_menu_start_el($item_output, $item, $depth, $args)
+function tati_filter_walker_nav_menu_start_el($item_output, $item, $depth, $args)
 {
     if ('menu-1' == $args->theme_location) {
         if ($item->current == 1) {
@@ -104,4 +77,4 @@ function taty_filter_walker_nav_menu_start_el($item_output, $item, $depth, $args
 
     return $item_output;
 }
-add_filter('walker_nav_menu_start_el', 'taty_filter_walker_nav_menu_start_el', 10, 4);
+add_filter('walker_nav_menu_start_el', 'tati_filter_walker_nav_menu_start_el', 10, 4);

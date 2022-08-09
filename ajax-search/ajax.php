@@ -3,9 +3,9 @@ if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly
 }
 
-add_action('wp_ajax_search_action', 'prefix_search_ajax_action_callback');
-add_action('wp_ajax_nopriv_search_action', 'prefix_search_ajax_action_callback');
-function prefix_search_ajax_action_callback()
+add_action('wp_ajax_search_action', 'tati_search_ajax_action_callback');
+add_action('wp_ajax_nopriv_search_action', 'tati_search_ajax_action_callback');
+function tati_search_ajax_action_callback()
 {
 
 	if (!wp_verify_nonce($_POST['nonce'], 'search-nonce')) {

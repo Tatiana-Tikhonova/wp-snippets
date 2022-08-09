@@ -1,13 +1,13 @@
 <?php
-function prefix_register_post_type()
+function tati_register_post_type()
 {
     register_post_type(
         'book',
         array(
             'labels'             => array(
-                'name'                  => __('Books', 'prefix'),
-                'singular_name'         => __('Book', 'prefix'),
-                'menu_name'             => __('Books', 'prefix'),
+                'name'                  => __('Books', 'tati'),
+                'singular_name'         => __('Book', 'tati'),
+                'menu_name'             => __('Books', 'tati'),
 
             ),
             'public'             => true,
@@ -27,4 +27,4 @@ function prefix_register_post_type()
     );
 }
 
-add_action('init', 'prefix_register_post_type');
+add_action('init', 'tati_register_post_type');
