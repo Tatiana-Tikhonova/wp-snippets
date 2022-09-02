@@ -1,4 +1,8 @@
 <?php
+
+/**
+ * Change logo classes
+ */
 function tati_change_logo_class($html)
 {
     $html = str_replace('custom-logo', 'site-branding__logo', $html);
